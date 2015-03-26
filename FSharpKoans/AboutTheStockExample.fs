@@ -55,21 +55,7 @@ module ``about the stock example`` =
     // tests for yourself along the way. You can also try 
     // using the F# Interactive window to check your progress.
 
-    open System
-
-    type DayData = {
-        Date: string
-        Change: decimal
-    }
-
-    let maxDay = 
-        stockData 
-        |> Seq.skip 1 
-        |> Seq.map (fun day -> day.Split ',') 
-        |> Seq.map (fun arr -> { Date = arr.[0]; Change = abs (Decimal.Parse arr.[4] - Decimal.Parse arr.[1]) }) 
-        |> Seq.maxBy (fun day -> day.Change)
-
-    let result = maxDay.Date
+    let result = __
 
     [<Koan>]
     let YouGotTheAnswerCorrect() =

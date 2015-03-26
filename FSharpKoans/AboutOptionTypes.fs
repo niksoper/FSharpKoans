@@ -22,16 +22,18 @@ module ``about option types`` =
     let OptionTypesMightContainAValue() =
         let someValue = Some 10
         
-        AssertEquality someValue.IsSome true
-        AssertEquality someValue.IsNone false
-        AssertEquality someValue.Value 10
+        AssertEquality someValue.IsSome __
+        AssertEquality someValue.IsNone __
+        AssertEquality someValue.Value __
+
+    //NOTE: You shouldn't really need to access the Value directly because F# has pattern matching...
 
     [<Koan>]
     let OrTheyMightNot() =
         let noValue = None
 
-        AssertEquality noValue.IsSome false
-        AssertEquality noValue.IsNone true
+        AssertEquality noValue.IsSome __
+        AssertEquality noValue.IsNone __
         AssertThrows<System.NullReferenceException> (fun () -> noValue.Value)
 
     [<Koan>]
@@ -53,8 +55,8 @@ module ``about option types`` =
             | Some score -> translate score
             | None -> "Unknown"
 
-        AssertEquality (getScore chronoTrigger) "Great"
-        AssertEquality (getScore halo) "Unknown"
+        AssertEquality (getScore chronoTrigger) __
+        AssertEquality (getScore halo) __
 
     [<Koan>]
     let ProjectingValuesFromOptionTypes() =
@@ -66,6 +68,6 @@ module ``about option types`` =
             game.Score
             |> Option.map (fun score -> if score > 3 then "play it" else "don't play")
 
-        //HINT: look at the return type of the decide on function
-        AssertEquality (decideOn chronoTrigger) (Some "play it")
-        AssertEquality (decideOn halo) None
+        //HINT: look at the return type of the decide on function (you'll need Some parentheses too...)
+        AssertEquality (decideOn chronoTrigger) __
+        AssertEquality (decideOn halo) __

@@ -19,7 +19,7 @@ module ``about pipelining`` =
 
     [<Koan>]
     let SquareEvenNumbersWithSeparateStatements() =
-        (* One way to combine the operations is by using separate statements.
+        (* NOTE: One way to combine the operations is by using separate statements.
            However, this is can be clumsy since you have to name each result. *)
 
         let numbers = [0..5]
@@ -27,11 +27,11 @@ module ``about pipelining`` =
         let evens = List.filter isEven numbers
         let result = List.map square evens
 
-        AssertEquality result [0;4;16]
+        AssertEquality result __
 
     [<Koan>]
     let SquareEvenNumbersWithParens() =
-        (* You can avoid this problem by using parens to pass the result of one
+        (* NOTE: You can avoid this problem by using parens to pass the result of one
            function to another. This can be difficult to read since you have to 
            start from the innermost function and work your way out. *)
 
@@ -39,11 +39,11 @@ module ``about pipelining`` =
 
         let result = List.map square (List.filter isEven numbers)
 
-        AssertEquality result [0;4;16]
+        AssertEquality result __
 
     [<Koan>]
     let SquareEvenNumbersWithPipelineOperator() =
-        (* In F#, you can use the pipeline operator to get the benefit of the 
+        (* NOTE: In F#, you can use the pipeline operator to get the benefit of the 
            parens style with the readablity of the statement style. *)
 
         let result =
@@ -51,7 +51,7 @@ module ``about pipelining`` =
             |> List.filter isEven
             |> List.map square
         
-        AssertEquality result [0;4;16]
+        AssertEquality result __
 
     [<Koan>]
     let HowThePipeOperatorIsDefined() =
@@ -63,4 +63,6 @@ module ``about pipelining`` =
             |> List.filter isEven
             |> List.map square
 
-        AssertEquality result [0;4;16]
+        AssertEquality result __
+
+    //NOTE: Think hard before introducing new 'operators' like this. How readable is your code going to be?

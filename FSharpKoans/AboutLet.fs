@@ -60,7 +60,7 @@ module ``about let`` =
         AssertEquality typeOfX typeof<int>
         AssertEquality typeOfY typeof<float>
 
-        //If you're coming from another .NET language, float is F# slang for
+        //NOTE: If you're coming from another .NET language, float is F# slang for
         //the double type.
 
     [<Koan>]
@@ -82,4 +82,4 @@ module ``about let`` =
         //      to reuse the name of a value in some cases using "shadowing".
         let x = 100
          
-        AssertEquality x 100
+        AssertEquality x __

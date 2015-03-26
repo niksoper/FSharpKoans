@@ -26,7 +26,7 @@ module ``about strings`` =
     let FormattingStringValues() =
         let message = sprintf "F# turns it to %d!" 11
 
-        AssertEquality message "F# turns it to 11!"
+        AssertEquality message __
 
         //NOTE: you can use printf to print to standard output
 
@@ -43,7 +43,7 @@ module ``about strings`` =
     let FormattingAnything() =
         let message = sprintf "Formatting other types is as easy as: %A" (1, 2, 3)
 
-        AssertEquality message "Formatting other types is as easy as: (1, 2, 3)"
+        AssertEquality message __
 
     (* NOTE: For all the %formatters that you can use with string formatting 
              see: http://msdn.microsoft.com/en-us/library/ee370560.aspx *)
@@ -80,8 +80,8 @@ module ``about strings`` =
         let first = message.[0]
         let other = message.[4] 
 
-        AssertEquality first 'h'
-        AssertEquality other 'o'
+        AssertEquality first __
+        AssertEquality other __
 
     [<Koan>]
     let ApplyWhatYouLearned() =

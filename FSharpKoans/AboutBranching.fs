@@ -46,8 +46,8 @@ module ``about branching`` =
         let result1 = isApple "apple"
         let result2 = isApple ""
         
-        AssertEquality result1 true
-        AssertEquality result2 false
+        AssertEquality result1 __
+        AssertEquality result2 __
     
     [<Koan>]
     let UsingTuplesWithIfStatementsQuicklyBecomesClumsy() =
@@ -66,6 +66,8 @@ module ``about branching`` =
         
         AssertEquality (getDinner person1) "Chris wants 'em some steak"
         AssertEquality (getDinner person2) "Dave doesn't want red meat"
+
+    //NOTE: compare the use of IF statements above to pattern matching below
         
     [<Koan>]
     let PatternMatchingIsNicer() =
